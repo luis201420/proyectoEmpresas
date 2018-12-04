@@ -365,25 +365,25 @@ $(document).ready(function()
     		$("#slider-range").slider(
 			{
 				range: true,
-				min: 0,
-				max: 1000,
-				values: [ 0, 580 ],
+				min: 1000,
+				max: 5000,
+				values: [ 1000, 2000 ],
 				slide: function( event, ui )
 				{
-					$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+					$( "#amount" ).val( "S/." + ui.values[ 0 ] + " - S/." + ui.values[ 1 ] );
 				}
 			});
 				
-			$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+			$( "#amount" ).val( "S/." + $( "#slider-range" ).slider( "values", 0 ) + " - S/." + $( "#slider-range" ).slider( "values", 1 ) );
 			$('.ui-slider-handle').on('mouseup', function()
 			{
 				$('.product_grid').isotope({
 		            filter: function()
 		            {
 		            	var priceRange = $('#amount').val();
-			        	var priceMin = parseFloat(priceRange.split('-')[0].replace('$', ''));
-			        	var priceMax = parseFloat(priceRange.split('-')[1].replace('$', ''));
-			        	var itemPrice = $(this).find('.product_price').clone().children().remove().end().text().replace( '$', '' );
+			        	var priceMin = parseFloat(priceRange.split('-')[0].replace('S/.', ''));
+			        	var priceMax = parseFloat(priceRange.split('-')[1].replace('S/.', ''));
+			        	var itemPrice = $(this).find('.product_price').clone().children().remove().end().text().replace( 'S/.', '' );
 
 			        	return (itemPrice > priceMin) && (itemPrice < priceMax);
 		            },

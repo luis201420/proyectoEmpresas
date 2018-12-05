@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="styles/shop_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/shop_responsive.css">
+<script src="js/jquery-3.3.1.min.js"></script>
 
 </head>
 
@@ -318,14 +319,18 @@
 
 	<!-- Shop -->
 
+
 	<div class="shop">
-		<div class="container">
+		<!-- Active modal -->
+		<a href="javascript:;" class="user-profile  " data-toggle="modal" data-target="#myModal" aria-expanded="false" style="margin-left: 40%;"><button id="filter_button" type="button" class="btn btn-outline-secondary" style="cursor: pointer;">Necesitas ayuda para empezar tu busqueda<span id="flat">?</span></button></a>
+		<div class="container" style="margin-top: 2%;">
 			<div class="row">
 				<div class="col-lg-3">
 
 					<!-- Shop Sidebar -->
 					<div class="shop_sidebar">
 						<div class="sidebar_section">
+
 							<div class="sidebar_title">Categorias</div>
 							<ul class="sidebar_categories">
 								<li><a href="#">Todas las laptops</a></li>
@@ -393,7 +398,7 @@
 
 					<div class="shop_content">
 						<div class="shop_bar clearfix">
-							<div class="shop_product_count"><span>186</span> productos encontrados</div>
+							<div class="shop_product_count"><span>186</span> Productos encontrados</div>
 							<div class="shop_sorting">
 								<span>Ordenar por:</span>
 								<ul>
@@ -734,6 +739,235 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Modal -->
+
+	<style type="text/css">
+        .modal-login {
+            color: #636363;
+            width: 350px;
+        }
+        .modal-login .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+        .modal-login .modal-header {
+            border-bottom: none;
+            position: relative;
+            justify-content: center;
+        }
+        .modal-login h4 {
+            text-align: center;
+            font-size: 26px;
+            margin: 30px 0 -15px;
+        }
+        .modal-login .form-control:focus {
+            border-color: #70c5c0;
+        }
+        .modal-login .form-control, .modal-login .btn {
+            min-height: 40px;
+            border-radius: 3px;
+        }
+        .modal-login .close {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+        .modal-login .modal-footer {
+            background: #ecf0f1;
+            border-color: #dee4e7;
+            text-align: center;
+            justify-content: center;
+            margin: 0 -20px -20px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+        .modal-login .modal-footer a {
+            color: #999;
+        }
+        .modal-login .avatar_login {
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -70px;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            z-index: 9;
+            background: #60c7c1;
+            padding: 15px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+        .modal-login .avatar_login img {
+            width: 100%;
+            height: 90%;
+
+        }
+        .modal-login.modal-dialog {
+            margin-top: 80px;
+        }
+        .modal-login .btn {
+            color: #fff;
+            border-radius: 4px;
+            background: #60c7c1;
+            text-decoration: none;
+            transition: all 0.4s;
+            line-height: normal;
+            border: none;
+        }
+        .modal-login .btn:hover, .modal-login .btn:focus {
+            background: #45aba6;
+            outline: none;
+        }
+        .trigger-btn {
+            display: inline-block;
+            margin: 100px auto;
+        }
+
+        .studentPhoto{
+            margin-left: 25%;
+            width: 50%;
+            height: 70%;
+            border-radius: 50%;
+            background-position: center;
+        }
+        .studentName{
+            cursor: pointer;
+        }
+        .progress {
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .progress span {
+            position: absolute;
+            display: block;
+            width: 100%;
+            color: black;
+         }
+         .alternativa{
+         	width: 30%;
+         	height: 150px;
+         	display:inline-block;
+         	margin-left: 2%;
+         	border-radius: 7px;
+         	cursor: pointer; 
+         	background-repeat: no-repeat;
+         	background-position: center;
+		    background-size: contain, cover;
+         }
+    </style>
+
+    <script type="text/javascript">
+    	function showNext(i,a){
+    		if(i==1){
+    			$( "#a1"+a).fadeTo( "slow" , 0.5, function() {
+    				$("#question").html("Por cual se inclina mas:");
+	    			$("#pregunta1").hide();
+   		 			$("#pregunta2").show();
+				});
+    		}
+    		if(i==2){
+    			$( "#a2"+a).fadeTo( "slow" , 0.5, function() {
+    				$("#question").html("Cual prefiere mas:");
+	    			$("#pregunta2").hide();
+   		 			$("#pregunta3").show();
+				});
+    		}
+    		if(i==3){
+    			$( "#a3"+a).fadeTo( "slow" , 0.5, function() {
+    				$("#question").html("Para que se usara la laptop:");
+	    			$("#pregunta3").hide();
+   		 			$("#pregunta4").show();
+				});
+    		}
+    		if(i==4){
+    			$( "#a4"+a).fadeTo( "slow" , 0.5, function() {
+    				$("#question").html("Para que se usara la laptop:");
+	    			$("#pregunta4").hide();
+   		 			$("#pregunta5").show();
+				});
+    		}
+    		if(i==5){
+    			 $( "#a5"+a).fadeTo( "slow" , 0.5, function() {
+    			 	$("#buttonBuscar").css('cursor', 'pointer');
+    			 	$("#buttonBuscar").prop('disabled', false);
+				});
+    		}
+    		$("#textDescription").html("");
+    	}
+    	function showText(a){
+    		if(a==1){
+    			$("#textDescription").html("Trabajo en casa");
+    		}
+    		if(a==2){
+    			$("#textDescription").html("Estudiante");
+    		}
+    		if(a==3){
+    			$("#textDescription").html("Para juegos");
+    		}
+    		if(a==4){
+    			$("#textDescription").html("Livianas");
+    		}
+    		if(a==5){
+    			$("#textDescription").html("Mejor rendimiento");
+    		}
+    	}
+    	$(document).ready(function(){
+			$(".alternativa").hover(function(){
+				$(this).css('border', '3px solid black');
+			});
+			$(".alternativa").mouseleave(function(){
+				$(this).css('border', '0px solid black');
+			});
+		});
+    </script>
+
+	<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="height: 1000px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                	<h3 id="question">Para que usara la laptop:</h3>
+                	<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="cursor: pointer;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2><span id="fullNameModal"></span></h2>
+                </div>
+                <div class="modal-body">
+                	<div id="pregunta1">
+                		<div class="alternativa" id="a11" style="background-image: url('images/home.jpg');" onclick="showNext(1,1)" onmouseover="showText(1)"></div>
+                		<div class="alternativa" id="a12" style="background-image: url('images/student.png');" onclick="showNext(1,2)" onmouseover="showText(2)"></div>
+                		<div class="alternativa" id="a13" style="background-image: url('images/gamer.jpg');" onclick="showNext(1,3)" onmouseover="showText(3)"></div>
+                	</div>
+                	<div id="pregunta2" style="display: none;">
+						<div class="alternativa" id="a21" style="background-image: url('images/liviano.jpg'); margin-left: 10%;" onclick="showNext(2,1)" onmouseover="showText(4)"></div>
+                		<div class="alternativa" id="a22" style="background-image: url('images/pesada.jpg');margin-left: 20%;" onclick="showNext(2,2)" onmouseover="showText(5)"></div>
+                	</div>
+                	<div id="pregunta3" style="display: none;">
+                		<div class="alternativa" id="a31" style="background-color: red;" onclick="showNext(3,1)"></div>
+                		<div class="alternativa" id="a32" style="background-color: blue;" onclick="showNext(3,2)"></div>
+                		<div class="alternativa" id="a33" style="background-color: yellow;" onclick="showNext(3,3)"></div>
+                	</div>
+                	<div id="pregunta4" style="display: none;">
+                		<div class="alternativa" id="a41" style="background-color: red;" onclick="showNext(4,1)"></div>
+                		<div class="alternativa" id="a42" style="background-color: blue;" onclick="showNext(4,2)"></div>
+                		<div class="alternativa" id="a43" style="background-color: yellow;" onclick="showNext(4,3)"></div>
+                	</div>
+                	<div id="pregunta5" style="display: none;">
+                		<div class="alternativa" id="a51" style="background-color: red;" onclick="showNext(5,1)"></div>
+                		<div class="alternativa" id="a52" style="background-color: blue;" onclick="showNext(5,2)"></div>
+                		<div class="alternativa" id="a53" style="background-color: yellow;" onclick="showNext(5,3)"></div>
+                	</div>
+                </div>
+                <h4 style="margin-left: 40%;" id="textDescription"></h4>
+                <div class="modal-footer">
+                    <button type="button" id="buttonBuscar" class="btn btn-primary" data-dismiss="modal" style="cursor: not-allowed;" disabled>Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<!-- Recently Viewed -->
 

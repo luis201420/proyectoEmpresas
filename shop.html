@@ -871,14 +871,14 @@
     		}
     		if(i==2){
     			$( "#a2"+a).fadeTo( "slow" , 0.5, function() {
-    				$("#question").html("Cual prefiere mas:");
+    				$("#question").html("Que tipo de almcenamiento desea?");
 	    			$("#pregunta2").hide();
    		 			$("#pregunta3").show();
 				});
     		}
     		if(i==3){
     			$( "#a3"+a).fadeTo( "slow" , 0.5, function() {
-    				$("#question").html("Para que se usara la laptop:");
+    				$("#question").html("Que tipo de almcenamiento desea?");
 	    			$("#pregunta3").hide();
    		 			$("#pregunta4").show();
 				});
@@ -897,6 +897,7 @@
 				});
     		}
     		$("#textDescription").html("");
+    		$("#contentDescription").html("");
     	}
     	function showText(a){
     		if(a==1){
@@ -914,6 +915,18 @@
     		if(a==5){
     			$("#textDescription").html("Mejor rendimiento");
     		}
+    		if(a==6){
+    			$("#textDescription").html("Unidad Disco duro");
+    			$("#contentDescription").html("Económica, ideal para almacenar muchos archivos, pero a veces es lenta para cargar o buscar cosas");
+    		}
+    		if(a==7){
+    			$("#textDescription").html("Unidad de estado solido");
+    			$("#contentDescription").html("Alto rendimiento, altas velocidades de carga, excelente para juegos y edición, pero muy costosa");
+    		}
+    		if(a==8){
+    			$("#textDescription").html("Unidad hibrida");
+    			$("#contentDescription").html("Esto generalmente significa que su sistema operativo (SO) está almacenado en un SSD rápido, por lo que los programas se cargan rápidamente, pero sus archivos se mantienen en un disco duro más lento, más grande y más barato");
+    		}
     	}
     	$(document).ready(function(){
 			$(".alternativa").hover(function(){
@@ -929,7 +942,7 @@
         <div class="modal-dialog" role="document" style="height: 1000px;">
             <div class="modal-content">
                 <div class="modal-header">
-                	<h3 id="question">Para que usara la laptop:</h3>
+                	<h3 id="question">¿Qué tipo de trabajo hará?</h3>
                 	<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="cursor: pointer;">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -946,9 +959,9 @@
                 		<div class="alternativa" id="a22" style="background-image: url('images/pesada.jpg');margin-left: 20%;" onclick="showNext(2,2)" onmouseover="showText(5)"></div>
                 	</div>
                 	<div id="pregunta3" style="display: none;">
-                		<div class="alternativa" id="a31" style="background-color: red;" onclick="showNext(3,1)"></div>
-                		<div class="alternativa" id="a32" style="background-color: blue;" onclick="showNext(3,2)"></div>
-                		<div class="alternativa" id="a33" style="background-color: yellow;" onclick="showNext(3,3)"></div>
+                		<div class="alternativa" id="a31" style="background-image: url('images/solido.jpg');" onclick="showNext(3,1)"  onmouseover="showText(6)"></div>
+                		<div class="alternativa" id="a32" style="background-image: url('images/normal.jpg');" onclick="showNext(3,2)"  onmouseover="showText(7)"></div>
+                		<div class="alternativa" id="a33" style="background-image: url('images/hibrida.jpg');" onclick="showNext(3,3)"  onmouseover="showText(8)"></div>
                 	</div>
                 	<div id="pregunta4" style="display: none;">
                 		<div class="alternativa" id="a41" style="background-color: red;" onclick="showNext(4,1)"></div>
@@ -961,7 +974,9 @@
                 		<div class="alternativa" id="a53" style="background-color: yellow;" onclick="showNext(5,3)"></div>
                 	</div>
                 </div>
-                <h4 style="margin-left: 40%;" id="textDescription"></h4>
+                <div style="text-align: center;"><h4 id="textDescription"></h4>
+                	<p id="contentDescription"></p>
+                </div>
                 <div class="modal-footer">
                     <button type="button" id="buttonBuscar" class="btn btn-primary" data-dismiss="modal" style="cursor: not-allowed;" disabled>Buscar</button>
                 </div>

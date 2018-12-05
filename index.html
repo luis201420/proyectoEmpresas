@@ -15,23 +15,7 @@
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <script src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript">
-	var ver = 0;
-	$(document).ready(function(){
-		$('#filter_button').click(function(){
-			if(ver == 0){
-				$('#filter').show(1000);
-				$('#flat').text("-");
-				ver=1;
-			}
-			else{
-				ver=0;
-				$('#filter').hide(1000);
-				$('#flat').text("+");
-			}
-		});
-	});
-</script>
+
 </head>
 
 <body>
@@ -1452,7 +1436,7 @@
 				<div class="col">
 					<div class="tabbed_container">
 						<div class="tabs clearfix tabs-right">
-							<div class="new_arrivals_title">Busqueda Personalizada</div>
+							<div class="new_arrivals_title">Busqueda Rapida</div>
 							<ul class="clearfix">
 								<li class="active">General</li>
 								<li>Laptops gamers</li>
@@ -1461,51 +1445,8 @@
 							</ul>
 							<div class="tabs_line"><span></span></div>
 						</div>
-						<a href="shop.html"><button id="filter_button" type="button" class="btn btn-outline-primary" style="cursor: pointer;">Busqueda Avanzada <span id="flat">+</span></button></a>
+						<a href="shop.html"><button id="filter_button" type="button" class="btn btn-outline-primary" style="cursor: pointer;">Busqueda Personalizada</button></a>
 
-						<!--div id="filter" style="height: 250px;width: 1150px;background-color: #E3F5FF;border-radius: 5px; display: none;">
-							<div style="height: 240px;width: 220px;margin-left: 15px; margin-top: 5px;display: inline-block;">
-								<h4>Marca</h4>
-								  <input type="checkbox"><label style="margin-left: 5px">APPLE </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px">LENOVO </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px">TOSHIBA </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px">HP </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px">ASUS </label></p>
-							</div>
-							<div style="height: 240px;width: 220px;display: inline-block;">
-								<h4>Capacidad de Disco Duro</h4>
-								  <input type="checkbox"><label style="margin-left: 5px"> Menos que 128 GB </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> 128 GB - 255.9 GB </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> 256 GB - 511.9 GB </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> 512 GB - 749.9 GB </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> 750 GB  a mas </label></p>
-							</div>
-							<div style="height: 240px;width: 220px;display: inline-block;">
-								<h4>RAM (GB)</h4>
-								  <input type="checkbox"><label style="margin-left: 5px"> 2 </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> 4 </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> 8 </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> 16 </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> 32 </label></p>
-							</div>
-							<div style="height: 240px;width: 220px;display: inline-block;">
-								<h4>Procesador</h4>
-								  <input type="checkbox"><label style="margin-left: 5px"> Intel Core 8th Gen </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> Intel Core 7th Gen </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> Intel Core i7 </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> Intel Core i5 </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> Intel Core i3 </label></p>
-							</div>
-							<div style="height: 240px;width: 220px;display: inline-block;">
-								<h4>Precio</h4>
-								  <input type="checkbox"><label style="margin-left: 5px"> menor a S/.1000 </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> S/.1000 - S/.1500 </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> S/.1500 - S/.2000 </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> S/.2000 - S/.3000 </label></p>
-								  <input type="checkbox"><label style="margin-left: 5px"> S/.3000 a mas  </label></p>
-							</div> 
-
-						</div-->
 						<div class="bestsellers_panel panel active">
 
 							<!-- Best Sellers Slider -->

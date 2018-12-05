@@ -879,11 +879,13 @@
     		if(i==3){
     			$( "#a3"+a).fadeTo( "slow" , 0.5, function() {
     				$("#question").html("Que tipo de almcenamiento desea?");
-	    			$("#pregunta3").hide();
-   		 			$("#pregunta4").show();
+	    			/*$("#pregunta3").hide();
+   		 			$("#pregunta4").show();*/
+   		 			$("#buttonBuscar").css('cursor', 'pointer');
+    			 	$("#buttonBuscar").prop('disabled', false);
 				});
     		}
-    		if(i==4){
+    		/*if(i==4){
     			$( "#a4"+a).fadeTo( "slow" , 0.5, function() {
     				$("#question").html("Para que se usara la laptop:");
 	    			$("#pregunta4").hide();
@@ -895,7 +897,7 @@
     			 	$("#buttonBuscar").css('cursor', 'pointer');
     			 	$("#buttonBuscar").prop('disabled', false);
 				});
-    		}
+    		}*/
     		$("#textDescription").html("");
     		$("#contentDescription").html("");
     	}
@@ -973,7 +975,7 @@
                 		<div class="alternativa" id="a32" style="background-image: url('images/normal.jpg');" onclick="showNext(3,2)"  onmouseover="showText(8)"></div>
                 		<div class="alternativa" id="a33" style="background-image: url('images/hibrida.jpg');" onclick="showNext(3,3)"  onmouseover="showText(9)"></div>
                 	</div>
-                	<div id="pregunta4" style="display: none;">
+                	<!--div id="pregunta4" style="display: none;">
                 		<div class="alternativa" id="a41" style="background-color: red;" onclick="showNext(4,1)"></div>
                 		<div class="alternativa" id="a42" style="background-color: blue;" onclick="showNext(4,2)"></div>
                 		<div class="alternativa" id="a43" style="background-color: yellow;" onclick="showNext(4,3)"></div>
@@ -982,7 +984,7 @@
                 		<div class="alternativa" id="a51" style="background-color: red;" onclick="showNext(5,1)"></div>
                 		<div class="alternativa" id="a52" style="background-color: blue;" onclick="showNext(5,2)"></div>
                 		<div class="alternativa" id="a53" style="background-color: yellow;" onclick="showNext(5,3)"></div>
-                	</div>
+                	</div-->
                 </div>
                 <div style="text-align: center;"><h4 id="textDescription"></h4>
                 	<p id="contentDescription"></p>

@@ -946,6 +946,17 @@
 			$(".alternativa").mouseleave(function(){
 				$(this).css('border', '0px solid black');
 			});
+			$('#myModal').on('hidden.bs.modal', function () {
+				$("#textDescription").html("");
+    			$("#contentDescription").html("");
+    			$("#question").html("¿Qué tipo de trabajo hará?");
+    			$("#pregunta1").show();
+   		 		$("#pregunta2").hide();
+   		 		$("#pregunta3").hide();
+   		 		$(".alternativa").fadeTo( "fast" , 1, function() {
+    				
+				});
+			});
 		});
     </script>
 

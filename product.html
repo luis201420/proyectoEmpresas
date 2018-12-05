@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/product_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/product_responsive.css">
-
+<script src="js/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
@@ -316,6 +316,23 @@
 		}
 
 	</style>
+	<script type="text/javascript">
+	var ver = 0;
+	$(document).ready(function(){
+		$('#prices_button').click(function(){
+			if(ver == 0){
+				$('#allPrices').show(1000);
+				$('#flat').text("-");
+				ver=1;
+			}
+			else{
+				ver=0;
+				$('#allPrices').hide(1000);
+				$('#flat').text("+");
+			}
+		});
+	});
+</script>
 
 	<!-- Single Product -->
 
@@ -375,8 +392,8 @@
 
 								<!--/div-->
 
-								<table>
-								  <tr>
+								<table style="color:rgba(0,0,0,0.5);">
+								  <tr style="color:black;">
 								    <th><h3>Caracteristicas:</h3></th>
 								    <th></th>
 								  </tr>
@@ -405,10 +422,39 @@
 								    <td>720p FaceTime HD camera</td>
 								  </tr>
 								  <tr>
-								    <td><h4 style="color: red;">Precio:</h4></td>
-								    <td><h4>S/.2000</h4></td>
+								    <td><h4 style="color: red;">Mejor precio:</h4></td>
+								    <td><h4 style="color:black;">S/.2000</h4></td>
 								  </tr>
 								</table>
+								<button id="prices_button" type="button" class="btn btn-outline-primary" style="cursor: pointer;">Mas precios <span id="flat">+</span></button>
+								<div id="allPrices" style="display: none;">
+									<table style="color:rgba(0,0,0,0.5);">
+										<tr style="color:black;">
+											<th><h3>Tienda</h3></th>
+											<th>Precio</th>
+										</tr>
+										<tr>
+											<td><strong>Saga Fallabella:</strong></td>
+											<td>S/.2100</td>
+										</tr>
+										<tr>
+											<td><strong>Ripley:</strong></td>
+											<td>S/.2250</td>
+										</tr>
+										<tr>
+											<td><strong>Aliexpress:</strong></td>
+											<td>S/.2300</td>
+										</tr>
+										<tr>
+											<td><strong>Gearbest:</strong></td>
+											<td>S/.2400</td>
+										</tr>
+										<tr>
+											<td><strong>Oechsle:</strong></td>
+											<td>S/.2500</td>
+										</tr>
+									</table>
+								</div>
 
 								<!--div class="product_price">S/.2000</div>
 								<div class="button_container">
